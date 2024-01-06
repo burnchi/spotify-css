@@ -9,10 +9,9 @@ import Library from "./Library";
 
 interface SidebarProps {
   children: React.ReactNode;
-  className?: string;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ children, className }) => {
+const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   const pathname = usePathname();
   const sidebarItems = [
     {
@@ -32,7 +31,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children, className }) => {
     <div className="flex h-full w-full overflow-hidden overflow-y-auto gap-2">
       <div className="md:flex hidden flex-col gap-2 h-full py-2">
         <Box className="">
-          {sidebarItems.map((item, inx) => (
+          {sidebarItems.map((item) => (
             <SidebarItem key={item.label} {...item}></SidebarItem>
           ))}
         </Box>
